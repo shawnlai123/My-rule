@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "emby.wtf",
+        "term.wtf",
+        "us.kg",
+        "nebula-media.org",
+        "sfcj.org",
+        "aliz.work",
+        "285286.xyz"
+      ]
+    }
+  ]
+}
