@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转中...</title>
+    <script>
+        function redirect() {
+            // 获取 URL 参数中的目标链接
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetUrl = urlParams.get('url');
+
+            if (targetUrl) {
+                window.location.href = targetUrl; // 执行跳转
+            } else {
+                document.body.innerHTML = "<h1>无效的跳转链接</h1>";
+            }
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <h1>正在跳转，请稍候...</h1>
+</body>
+</html>
