@@ -7,16 +7,16 @@
 # DOMAIN-SUFFIX: 45
 # PROCESS-NAME: 1
 # TOTAL: 52
+DOMAIN-SUFFIX,saturdayvideo.top
+DOMAIN-SUFFIX,beebi.org
+DOMAIN-SUFFIX,emby.wtf
+DOMAIN-SUFFIX,sfcj.org
 DOMAIN-SUFFIX,misty.cx
 DOMAIN,emby.enjoyit.eu.org
 DOMAIN,emby.lcloud.wiki
 DOMAIN,notnetflix.cos.cat
 DOMAIN-SUFFIX,123456.al
 DOMAIN-SUFFIX,285286.xyz
-DOMAIN-SUFFIX,agahk1.jmsooo.com
-DOMAIN-SUFFIX,agajp1.jmsooo.com
-DOMAIN-SUFFIX,agasg1.jmsooo.com
-DOMAIN-SUFFIX,sfcj.org
 DOMAIN-SUFFIX,auroramedia.vip
 DOMAIN-SUFFIX,aws.jmsooo.com
 DOMAIN-SUFFIX,cf1.jmsooo.com
@@ -36,7 +36,6 @@ DOMAIN-SUFFIX,emby.nyancat.net
 DOMAIN-SUFFIX,emby.ok.edu.hk
 DOMAIN-SUFFIX,emby.paoche.ooo
 DOMAIN-SUFFIX,emby.prprcloud.com
-DOMAIN-SUFFIX,emby.wtf
 DOMAIN-SUFFIX,emby.xeton.dev
 DOMAIN-SUFFIX,emby.ytoo.li
 DOMAIN-SUFFIX,embymv.tk
