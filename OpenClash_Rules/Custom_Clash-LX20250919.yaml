@@ -1,0 +1,558 @@
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+redir-port: 7892
+tproxy-port: 7895
+allow-lan: true
+bind-address: "*"
+mode: rule
+tcp-concurrent: true
+unified-delay: true
+
+geox-url:
+  mmdb: https://testingcf.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/Country.mmdb
+  geoip: https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat
+  geosite: https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
+  asn: https://testingcf.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb
+
+geo-auto-update: true # 是否自动更新 geodata
+geo-update-interval: 24 # 更新间隔，单位：小时
+geodata-mode: true
+
+log-level: info
+ipv6: true
+external-controller: 0.0.0.0:9090
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - 0.0.0.0:53
+  auto-detect-interface: false
+  auto-route: false
+  auto-redirect: false
+  strict-route: false
+  endpoint-independent-nat: true
+
+sniffer:
+  enable: true
+  override-destination: true
+  sniff:
+    QUIC:
+      ports:
+      - 443
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+  force-domain:
+    - "+.netflix.com"
+    - "+.nflxvideo.net"
+    - "+.amazonaws.com"
+    - "+.media.dssott.com"
+  skip-domain:
+    - "+.apple.com"
+    - Mijia Cloud
+    - dlg.io.mi.com
+    - "+.oray.com"
+    - "+.sunlogin.net"
+    - "+.push.apple.com"
+  parse-pure-ip: true
+  force-dns-mapping: true
+
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: true
+  default-nameserver:
+    - 114.114.114.114
+    - tls://223.5.5.5:853
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - localhost.ptlogin2.qq.com
+    - geosite:cn
+  fake-ip-filter-mode: blacklist
+  respect-rules: false
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+proxy-providers:
+  provider1:
+    type: http
+    url: "url"
+    interval: 3600
+    path: ./proxy_provider/provider1.yaml
+    proxy: DIRECT
+    header:
+      User-Agent:
+      - "clash.meta"
+      - "mihomo/1.18.3"
+
+    health-check:
+      enable: true
+      interval: 600
+      url: https://cp.cloudflare.com/generate_204
+    override: # 覆写节点加载时的一些配置项
+      skip-cert-verify: true
+      udp: true
+      # additional-prefix: "[provider1]"
+      # additional-suffix: "test"
+
+
+proxy-groups:
+  - name: "🌐 节点选择"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "💬 即时通讯"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🌐 社交媒体"
+    type: select
+    proxies:    
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🚀 GitHub"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🤖 ChatGPT"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🤖 Copilot"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🤖 AI服务"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🎶 TikTok"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "📹 YouTube"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🎥 Netflix"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🎥 DisneyPlus"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🎥 HBO"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🎥 PrimeVideo"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🎥 AppleTV+"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+
+  - name: "🎥 Emby"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "🎻 Spotify"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "📺 Bahamut"
+    type: select
+    proxies:
+    - "🇼🇸 台湾节点"
+    - "🎯 全球直连"
+
+  - name: "🌎 国外媒体"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "🛒 国外电商"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "📢 谷歌FCM"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "🇬 谷歌服务"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "🍎 苹果服务"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "Ⓜ️ 微软服务"
+    type: select
+    proxies:
+     - "🇭🇰 香港节点"
+     - "🇺🇸 美国节点"
+     - "🇯🇵 日本节点"
+     - "🇼🇸 台湾节点"
+     - "🇨🇦 加拿大节点"
+     - "🇬🇧 英国节点"
+     - "🎯 全球直连"
+
+  - name: "🎮 游戏平台"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "🎮 Steam"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "🚀 测速工具"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "🐟 漏网之鱼"
+    type: select
+    proxies:
+    - "🇭🇰 香港节点"
+    - "🇺🇸 美国节点"
+    - "🇯🇵 日本节点"
+    - "🇼🇸 台湾节点"
+    - "🇨🇦 加拿大节点"
+    - "🇬🇧 英国节点"
+    - "🎯 全球直连"
+
+  - name: "🔀 非标端口"
+    type: select
+    proxies:
+    - "🐟 遵循规则"
+    - "🎯 全球直连"
+    - "Ⓜ️ 禁用网格"
+
+  - name: "🇭🇰 香港节点"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    filter: "(?i)(港|HK|Hong Kong|HongKong|深港|🇭🇰)"
+    use:
+      - provider1
+    interval: 300
+    tolerance: 50
+
+  - name: "🇺🇸 美国节点"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    filter: "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|🇺🇸)"
+    use:
+      - provider1
+    interval: 300
+    tolerance: 50
+
+  - name: "🇯🇵 日本节点"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    filter: "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|(?<!尼|-)日|JP|Japan|🇯🇵)"
+    use:
+      - provider1
+    interval: 300
+    tolerance: 50
+
+  - name: "🇼🇸 台湾节点"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    filter: "(?i)(台|新北|彰化|TW|Taiwan|🇹🇼)"
+    use:
+      - provider1
+    interval: 300
+    tolerance: 50
+
+  - name: "🇨🇦 加拿大节点"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    filter: "(?i)(加拿大|Canada|渥太华|温哥华|卡尔加里|🇨🇦)"
+    use:
+      - provider1
+    interval: 300
+    tolerance: 50
+
+  - name: "🇬🇧 英国节点"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    filter: "(?i)(英国|Britain|United Kingdom|England|伦敦|🇬🇧)"
+    use:
+      - provider1
+    interval: 300
+    tolerance: 50
+
+  - name: "🎯 全球直连"
+    type: select
+    url: https://www.gstatic.com/generate_204
+    proxies:
+      - DIRECT
+
+  - name: "Ⓜ️ 禁用网格"
+    type: select
+    proxies:
+      - REJECT     
+
+  - name: "🐟 遵循规则"
+    type: select
+    url: https://www.gstatic.com/generate_204
+    proxies:
+      - "🐟 漏网之鱼"
+
+rules:
+- "GEOSITE,private,🎯 全球直连"
+- "GEOIP,private,🎯 全球直连,no-resolve"
+- "RULE-SET,Custom_Reject_Classical,Ⓜ️ 禁用网格"
+- "RULE-SET,Custom_Direct,🎯 全球直连"
+- "RULE-SET,Custom_Proxy,🌐 节点选择"
+- "GEOSITE,google-cn,🎯 全球直连"
+- "GEOSITE,category-games@cn,🎯 全球直连"
+- "RULE-SET,Steam_CDN,🎯 全球直连"
+- "GEOSITE,category-game-platforms-download,🎯 全球直连"
+- "GEOSITE,category-public-tracker,🎯 全球直连"
+- "GEOSITE,category-communication,💬 即时通讯"
+- "GEOSITE,category-social-media-!cn,🌐 社交媒体"
+- "GEOSITE,openai,🤖 ChatGPT"
+- "GEOSITE,bing,🤖 Copilot"
+- "GEOSITE,category-ai-!cn,🤖 AI服务"
+- "GEOSITE,github,🚀 GitHub"
+- "GEOSITE,category-speedtest,🚀 测速工具"
+- "GEOSITE,steam,🎮 Steam"
+- "GEOSITE,youtube,📹 YouTube"
+- "GEOSITE,apple-tvplus,🎥 AppleTV+"
+- "GEOSITE,apple,🍎 苹果服务"
+- "GEOSITE,microsoft,Ⓜ️ 微软服务"
+- "GEOSITE,googlefcm,📢 谷歌FCM"
+- "GEOSITE,google,🇬 谷歌服务"
+- "GEOSITE,tiktok,🎶 TikTok"
+- "GEOSITE,netflix,🎥 Netflix"
+- "GEOSITE,disney,🎥 DisneyPlus"
+- "GEOSITE,hbo,🎥 HBO"
+- "GEOSITE,primevideo,🎥 PrimeVideo"
+- "GEOSITE,category-emby,🎥 Emby"
+- "GEOSITE,spotify,🎻 Spotify"
+- "GEOSITE,bahamut,📺 Bahamut"
+- "GEOSITE,category-games,🎮 游戏平台"
+- "GEOSITE,category-entertainment,🌎 国外媒体"
+- "GEOSITE,category-ecommerce,🛒 国外电商"
+- "GEOSITE,gfw,🌐 节点选择"
+- "GEOIP,telegram,💬 即时通讯,no-resolve"
+- "GEOIP,twitter,🌐 社交媒体,no-resolve"
+- "GEOIP,facebook,🌐 社交媒体,no-resolve"
+- "GEOIP,google,🇬 谷歌服务,no-resolve"
+- "GEOIP,netflix,🎥 Netflix,no-resolve"
+- "GEOSITE,cn,🎯 全球直连"
+- "GEOIP,cn,🎯 全球直连,no-resolve"
+- "RULE-SET,Custom_Port_Direct,🔀 非标端口"
+- "MATCH,🐟 漏网之鱼"
+
+
+rule-providers:
+  Custom_Port_Direct:
+    behavior: classical
+    interval: 10800
+    path: ./rule_provider/Custom_Port_Direct.yaml
+    type: http
+    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml"
+    proxy: DIRECT
+
+  Custom_Reject_Classical:
+    behavior: classical
+    interval: 10800
+    path: ./rule_provider/Custom_Reject_Classical.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/shawnlai123/My-rule/refs/heads/main/OpenClash_Rules/Custom_Reject_Classical.yaml"
+    proxy: DIRECT
+
+  Custom_Direct:
+    behavior: classical
+    interval: 10800
+    path: ./rule_provider/Custom_Direct_Classical.yaml
+    type: http
+    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Classical.yaml"
+    proxy: DIRECT
+
+  Custom_Proxy:
+    behavior: classical
+    interval: 10800
+    path: ./rule_provider/Custom_Proxy_Classical.yaml
+    type: http
+    url: "https://raw.githubusercontent.com/shawnlai123/My-rule/refs/heads/main/OpenClash_Rules/Custom_Proxy_Classical.yaml"
+    proxy: DIRECT
+
+  Steam_CDN:
+    behavior: classical
+    interval: 10800
+    path: ./rule_provider/Steam_CDN_Classical.yaml
+    type: http
+    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_Classical.yaml"
+    proxy: DIRECT
