@@ -4,3 +4,5 @@
 payload:
   - DOMAIN-SUFFIX,pinterest.com
   - DOMAIN-SUFFIX,llg01.com
+  - DOMAIN-SUFFIX,emby.wtf
+  - DOMAIN-SUFFIX,sfcj.org
