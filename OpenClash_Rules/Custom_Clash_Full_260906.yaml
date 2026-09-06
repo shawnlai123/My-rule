@@ -35,8 +35,7 @@ proxy-providers:
 # ==================== 代理策略组 Proxy Groups ====================
 # 策略组候选顺序、分组类型与当前 Custom_Clash_Full.ini 保持一致；公共节点过滤在 provider1 层统一完成。
 proxy-groups:
-  # 🌐 节点选择：旧版去重配置，保留用于快速回退。
-  # 如需恢复，请注释下方当前配置，并取消注释此块。
+  # 策略组由以下组成内容组成
   # - name: "🌐 节点选择"
   #   type: select
   #   proxies:
@@ -74,101 +73,61 @@ proxy-groups:
       - "🇬🇧 英国节点"
       - "🇫🇷 法国节点"
       - "🇩🇪 德国节点"
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
   - name: "💬 即时通讯"
     type: select
     proxies:
-      - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
       - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
       - "🇫🇷 法国节点"
       - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🌐 社交媒体"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
       - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
       - "🇫🇷 法国节点"
       - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "📞 Talkatone"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
       - "🇫🇷 法国节点"
       - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🚀 GitHub"
     type: select
     proxies:
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇼🇸 台湾节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🎯 全球直连"
-    use:
-      - provider1
+      - "🇨🇳 全球直连"
   - name: "🤖 ChatGPT"
     type: select
     proxies:
+      - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
       - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-    use:
-      - provider1
   - name: "🤖 Copilot"
     type: select
     proxies:
@@ -178,8 +137,15 @@ proxy-groups:
       - "🇼🇸 台湾节点"
       - "🇬🇧 英国节点"
       - "🇩🇪 德国节点"
-    use:
-      - provider1
+  - name: "🤖 Gemini"
+    type: select
+    proxies:
+      - "🇭🇰 香港节点"
+      - "🇺🇸 美国节点"
+      - "🇯🇵 日本节点"
+      - "🇼🇸 台湾节点"
+      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🤖 AI服务"
     type: select
     proxies:
@@ -190,600 +156,252 @@ proxy-groups:
       - "🇬🇧 英国节点"
       - "🇫🇷 法国节点"
       - "🇩🇪 德国节点"
-    use:
-      - provider1
   - name: "🎶 TikTok"
     type: select
     proxies:
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
+      - "🇬🇧 英国节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-
-    use:
-      - provider1
   - name: "📹 YouTube"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🇸🇬 新加坡节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🎥 Netflix"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🇸🇬 新加坡节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
       - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🎥 DisneyPlus"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🇸🇬 新加坡节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🎥 HBO"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🇸🇬 新加坡节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
       - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🎥 PrimeVideo"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🇸🇬 新加坡节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
+      - "🇨🇳 全球直连"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🎥 AppleTV+"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🇸🇬 新加坡节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-      - "🎯 全球直连"
-    use:
-      - provider1
+      - "🇨🇳 全球直连"
   - name: "🎥 Emby"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🎻 Spotify"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "📺 Bahamut"
     type: select
     proxies:
       - "🇼🇸 台湾节点"
       - "🌐 节点选择"
-      - "🎯 全球直连"
-    use:
-      - provider1
+      - "🇨🇳 全球直连"
   - name: "🌎 国外媒体"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🛒 国外电商"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
-  - name: "🪙 加密货币"
-    type: select
-    proxies:
-      - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🇭🇰 香港节点"
-      - "🇺🇸 美国节点"
-      - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
-      - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
-      - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "📢 谷歌FCM"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
       - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🇬 谷歌服务"
     type: select
     proxies:
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🍎 苹果服务"
     type: select
     proxies:
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
-      - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
-      - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "Ⓜ️ 微软服务"
     type: select
     proxies:
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "💾 OneDrive"
     type: select
     proxies:
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "💳 PayPal"
     type: select
     proxies:
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-  # 🎮 游戏平台：旧版配置，保留用于快速回退
-  # 如需恢复，请注释下方当前配置，并取消注释旧组块
-#   - name: "🎮 游戏平台"
-#     type: select
-#     proxies:
-#       - "🎯 全球直连"
-#       - "🌐 节点选择"
-#       - "🏠 所有节点"
-#       - "🇭🇰 香港节点"
-#       - "🇺🇸 美国节点"
-#       - "🇯🇵 日本节点"
-#       - "🇸🇬 新加坡节点"
-#       - "🇼🇸 台湾节点"
-#       - "🇰🇷 韩国节点"
-#       - "🇨🇦 加拿大节点"
-#       - "🇬🇧 英国节点"
-#       - "🇫🇷 法国节点"
-#       - "🇩🇪 德国节点"
-#       - "🇳🇱 荷兰节点"
-#       - "🇹🇷 土耳其节点"
-#       - "🇷🇺 俄罗斯节点"
-#       - "🌐 其他地区"
-#       - "🏠 家宽节点"
-#       - "🐢 低倍率节点"
-
-    use:
-      - provider1
+  - name: "🎮 SONY PS"
+    type: select
+    proxies:
+      - "🇨🇳 全球直连"
+      - "🇭🇰 香港节点"
+      - "🇺🇸 美国节点"
+      - "🇯🇵 日本节点"
+      - "🇼🇸 台湾节点"
+      - "🇬🇧 英国节点"
   - name: "🎮 游戏平台"
     type: select
     proxies:
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🎮 Steam"
     type: select
     proxies:
-      - "🎯 全球直连"
-      - "🌐 节点选择"
-      - "🏠 所有节点"
+      - "🇨🇳 全球直连"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "⏬ PT站点"
     type: select
     proxies:
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
+      - "🇨🇳 全球直连"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-      - "🌐 节点选择"
-      - "🏠 所有节点"
-      - "🎯 全球直连"
-    use:
-      - provider1
   - name: "🚀 测速工具"
     type: select
     proxies:
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🌍 国外域名"
     type: select
     proxies:
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
       - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
       - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
+  - name: "Ⓜ️ 禁用网格"
+    type: select
+    proxies:
+      - REJECT
   - name: "🐟 漏网之鱼"
     type: select
     proxies:
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
       - "🌐 节点选择"
-      - "🏠 所有节点"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
-      - "🇯🇵 日本节点"
-      - "🇸🇬 新加坡节点"
-      - "🇼🇸 台湾节点"
-      - "🇰🇷 韩国节点"
-      - "🇨🇦 加拿大节点"
-      - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
-      - "🇩🇪 德国节点"
-      - "🇳🇱 荷兰节点"
-      - "🇹🇷 土耳其节点"
-      - "🇷🇺 俄罗斯节点"
-      - "🌐 其他地区"
-      - "🏠 家宽节点"
-      - "🐢 低倍率节点"
-    use:
-      - provider1
   - name: "🔀 非标端口"
     type: select
     proxies:
       - "🐟 漏网之鱼"
-      - "🎯 全球直连"
+      - "🇨🇳 全球直连"
   - name: "🇭🇰 香港节点"
     type: url-test
     filter: '(?i)(🇭🇰|港|\bHK(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|hk|Hong Kong|HongKong|hongkong|HONG KONG|HONGKONG|深港|HKG|九龙|Kowloon|新界|沙田|荃湾|葵涌)'
@@ -912,7 +530,7 @@ proxy-groups:
     url: https://cp.cloudflare.com/generate_204
     interval: 300
     tolerance: 50
-  - name: "🎯 全球直连"
+  - name: "🇨🇳 全球直连"
     type: select
     url: http://wifi.vivo.com.cn/generate_204
     proxies:
@@ -970,30 +588,48 @@ rule-providers:
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_IP.mrs"
     format: mrs
+  SONY_PS4:
+    behavior: classical
+    interval: 28800
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Loon/PlayStation/PlayStation.list"
+  Gemini:
+    behavior: classical
+    interval: 28800
+    type: http
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.yaml"
+  My_Reject:
+    behavior: classical
+    interval: 28800
+    type: http
+    url: "https://raw.githubusercontent.com/shawnlai123/My-rule/refs/heads/main/OpenClash_Rules/Custom_Reject_Classical.yaml"
 
 # ==================== 分流规则 Rules ====================
 # 规则自上而下匹配，命中首条规则后停止。
 # no-resolve 用于 IP 类规则，避免为规则匹配额外触发 DNS 解析。
 rules:
-  - "GEOSITE,private,🎯 全球直连"
-  - "GEOIP,private,🎯 全球直连,no-resolve"
-  - "RULE-SET,Custom_Direct_Domain,🎯 全球直连"
-  - "RULE-SET,Custom_Direct_IP,🎯 全球直连,no-resolve"
-  - "RULE-SET,Custom_Direct_Port,🎯 全球直连"
+  - "GEOSITE,private,🇨🇳 全球直连"
+  - "GEOIP,private,🇨🇳 全球直连,no-resolve"
+  - "RULE-SET,Custom_Direct_Domain,🇨🇳 全球直连"
+  - "RULE-SET,Custom_Direct_IP,🇨🇳 全球直连,no-resolve"
+  - "RULE-SET,Custom_Direct_Port,🇨🇳 全球直连"
   - "RULE-SET,Custom_Proxy_Domain,🌐 节点选择"
   - "RULE-SET,Custom_Proxy_IP,🌐 节点选择,no-resolve"
-  - "GEOSITE,google-cn,🎯 全球直连"
-  - "GEOSITE,category-games@cn,🎯 全球直连"
-  - "RULE-SET,Steam_CDN_Domain,🎯 全球直连"
-  - "RULE-SET,Steam_CDN_IP,🎯 全球直连,no-resolve"
-  - "GEOSITE,category-game-platforms-download,🎯 全球直连"
-  - "GEOSITE,category-public-tracker,🎯 全球直连"
+  - "GEOSITE,google-cn,🇨🇳 全球直连"
+  - "RULE-SET,SONY_PS4,🎮 SONY PS"
+  - "RULE-SET,Gemini,🤖 Gemini"
+  - "GEOSITE,openai,🤖 ChatGPT"
+  - "GEOSITE,category-games@cn,🇨🇳 全球直连"
+  - "RULE-SET,Steam_CDN_Domain,🇨🇳 全球直连"
+  - "RULE-SET,Steam_CDN_IP,🇨🇳 全球直连,no-resolve"
+  - "GEOSITE,category-game-platforms-download,🇨🇳 全球直连"
+  - "GEOSITE,category-public-tracker,🇨🇳 全球直连"
   - "GEOSITE,category-communication,💬 即时通讯"
   - "GEOSITE,category-social-media-!cn,🌐 社交媒体"
   - "GEOSITE,talkatone,📞 Talkatone"
-  - "GEOSITE,openai,🤖 ChatGPT"
   - "GEOSITE,onedrive,💾 OneDrive"
   - "GEOSITE,bing,🤖 Copilot"
+  - "RULE-SET,My_Reject,Ⓜ️ 禁用网格"
   - "GEOSITE,category-ai-!cn,🤖 AI服务"
   - "GEOSITE,github,🚀 GitHub"
   - "GEOSITE,category-speedtest,🚀 测速工具"
@@ -1017,7 +653,6 @@ rules:
   - "GEOSITE,category-pt,⏬ PT站点"
   - "GEOSITE,paypal,💳 PayPal"
   - "GEOSITE,category-ecommerce,🛒 国外电商"
-  - "GEOSITE,category-cryptocurrency,🪙 加密货币"
   - "GEOSITE,gfw,🌐 节点选择"
   - "GEOIP,telegram,💬 即时通讯,no-resolve"
   - "GEOIP,twitter,🌐 社交媒体,no-resolve"
@@ -1026,7 +661,7 @@ rules:
   - "GEOIP,netflix,🎥 Netflix,no-resolve"
   # GFW 及专用规则未命中的国外域名默认直连，可在策略组中切换代理。
   - "GEOSITE,geolocation-!cn,🌍 国外域名"
-  - "GEOSITE,cn,🎯 全球直连"
-  - "GEOIP,cn,🎯 全球直连,no-resolve"
+  - "GEOSITE,cn,🇨🇳 全球直连"
+  - "GEOIP,cn,🇨🇳 全球直连,no-resolve"
   - "RULE-SET,Nonstandard_Port_Direct,🔀 非标端口"
   - "MATCH,🐟 漏网之鱼"
