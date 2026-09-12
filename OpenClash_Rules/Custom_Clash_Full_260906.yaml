@@ -8,25 +8,44 @@
 # ==================== 代理提供者 Proxy Providers ====================
 # provider1 用于加载机场订阅；多订阅用户可复制并依次命名为 provider2、provider3……
 # 新增 Provider 后，还需将其加入相关策略组的 use 列表。
+# ==================== 代理提供者 Proxy Providers ====================
 proxy-providers:
   provider1:
     type: http
-    url: "url"  # 填入订阅链接
-    interval: 86400  # 订阅更新间隔，单位：秒
+    url: "url1"  # 填入第一个订阅链接
+    interval: 3600  # 订阅更新间隔，单位：秒
     path: ./proxy_provider/provider1.yaml
     proxy: DIRECT  # 下载订阅时使用的策略
-    # 在 Provider 层统一排除公告、流量、到期等非节点条目，避免各策略组重复配置
     filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
-    header:  # 可选：自定义 HTTP 请求头
+    header:  
     health-check:
       enable: true
       url: https://cp.cloudflare.com/generate_204
-      interval: 600
+      interval: 300
       timeout: 5000
       lazy: false
       expected-status: 204
     override:
       udp: true
+
+  provider2:
+    type: http
+    url: "url2"  # 填入第二个订阅链接
+    interval: 3600
+    path: ./proxy_provider/provider2.yaml  # 务必修改为 provider2.yaml
+    proxy: DIRECT
+    filter: "^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic|GB|Expire)).*$"
+    header:  
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: false
+      expected-status: 204
+    override:
+      udp: true
+
       # 不建议默认跳过 TLS 证书校验；仅在明确需要兼容特定节点时启用
       # skip-cert-verify: true
       # additional-prefix: "[provider1]"
@@ -39,6 +58,7 @@ proxy-groups:
     type: select
     use:
       - provider1
+      - provider2
   - name: "🌐 节点选择"
     type: select
     proxies:
@@ -370,6 +390,7 @@ proxy-groups:
     filter: '(?i)(🇭🇰|港|\bHK(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|hk|Hong Kong|HongKong|hongkong|HONG KONG|HONGKONG|深港|HKG|九龙|Kowloon|新界|沙田|荃湾|葵涌)'
     use:
       - provider1
+      - provider2
     url: https://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 50
@@ -378,6 +399,7 @@ proxy-groups:
     filter: '(?i)(🇺🇸|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|纽约|纽纽|亚特兰大|迈阿密|华盛顿|\bUS(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|United States|UnitedStates|UNITED STATES|USA|America|AMERICA|JFK|EWR|IAD|ATL|ORD|MIA|NYC|LAX|SFO|SEA|DFW|SJC)'
     use:
       - provider1
+      - provider2
     url: https://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 50
@@ -386,6 +408,7 @@ proxy-groups:
     filter: '(?i)(🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|(?<!尼|-)日|\bJP(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|Japan|JAPAN|JPN|NRT|HND|KIX|TYO|OSA|关西|Kansai|KANSAI)'
     use:
       - provider1
+      - provider2
     url: https://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 50
@@ -394,6 +417,7 @@ proxy-groups:
     filter: '(?i)(🇸🇬|新加坡|坡|狮城|\bSG(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|Singapore|SINGAPORE|SIN)'
     use:
       - provider1
+      - provider2
     url: https://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 50
@@ -402,6 +426,7 @@ proxy-groups:
     filter: '(?i)(🇹🇼|🇼🇸|台|新北|彰化|\bTW(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|Taiwan|TAIWAN|TWN|TPE|ROC)'
     use:
       - provider1
+      - provider2
     url: https://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 50
@@ -442,6 +467,7 @@ proxy-groups:
     filter: '(?i)(🇩🇪|德国|Germany|GERMANY|\bDE(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|DEU|柏林|法兰克福|慕尼黑|Munich|MUC)'
     use:
       - provider1
+      - provider2
     url: https://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 50
@@ -474,6 +500,7 @@ proxy-groups:
     filter: '(?i)(家宽|家庭宽带|住宅|Residential)'
     use:
       - provider1
+      - provider2
     url: https://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 50
