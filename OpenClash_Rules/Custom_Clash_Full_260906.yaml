@@ -69,9 +69,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇨🇦 加拿大节点"
-      - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
+      - "🇸🇬 新加坡节点"
       - "🇩🇪 德国节点"
       - "🇨🇳 全球直连"
   - name: "💬 即时通讯"
@@ -81,7 +79,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🇨🇳 全球直连"
       - "🏠 家宽节点"
   - name: "🌐 社交媒体"
@@ -92,8 +90,9 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🇨🇳 全球直连"
+      - "🇸🇬 新加坡节点"
       - "🏠 家宽节点"
   - name: "📞 Talkatone"
     type: select
@@ -102,7 +101,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🏠 家宽节点"
   - name: "🚀 GitHub"
     type: select
@@ -110,25 +109,25 @@ proxy-groups:
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🇨🇳 全球直连"
-  - name: "🤖 ChatGPT"
+  - name: "🤖 Openai"
     type: select
     proxies:
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
+      - "🇸🇬 新加坡节点"
       - "🇨🇦 加拿大节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🤖 Copilot"
     type: select
     proxies:
-      - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇸🇬 新加坡节点"
       - "🇩🇪 德国节点"
   - name: "🤖 Gemini"
     type: select
@@ -137,26 +136,26 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇸🇬 新加坡节点"
       - "🇩🇪 德国节点"
-  - name: "🤖 AI服务"
+  - name: "🤖 国外AI"
     type: select
     proxies:
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
-      - "🇫🇷 法国节点"
       - "🇩🇪 德国节点"
+      - "🇸🇬 新加坡节点"
   - name: "🎶 TikTok"
     type: select
     proxies:
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🇼🇸 台湾节点"
+      - "🇸🇬 新加坡节点"
   - name: "📹 YouTube"
     type: select
     proxies:
@@ -164,7 +163,8 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
+      - "🇸🇬 新加坡节点"
       - "🏠 家宽节点"
   - name: "🎥 Netflix"
     type: select
@@ -173,7 +173,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🏠 家宽节点"
   - name: "🎥 DisneyPlus"
     type: select
@@ -183,7 +183,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🏠 家宽节点"
   - name: "🎥 HBO"
     type: select
@@ -194,7 +194,7 @@ proxy-groups:
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
       - "🇨🇦 加拿大节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🏠 家宽节点"
   - name: "🎥 PrimeVideo"
     type: select
@@ -204,18 +204,17 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🇨🇳 全球直连"
       - "🏠 家宽节点"
   - name: "🎥 AppleTV+"
     type: select
     proxies:
-      - "🌐 节点选择"
       - "🇭🇰 香港节点"
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🏠 家宽节点"
       - "🇨🇳 全球直连"
   - name: "🎥 Emby"
@@ -227,7 +226,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🎻 Spotify"
     type: select
     proxies:
@@ -236,7 +235,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "📺 Bahamut"
     type: select
     proxies:
@@ -250,7 +249,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🇨🇳 全球直连"
   - name: "🛒 国外电商"
     type: select
@@ -259,6 +258,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
+      - "🇩🇪 德国节点"
       - "🇨🇳 全球直连"
   - name: "📢 谷歌FCM"
     type: select
@@ -268,7 +268,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
       - "🇨🇳 全球直连"
   - name: "🇬 谷歌服务"
     type: select
@@ -278,7 +278,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🍎 苹果服务"
     type: select
     proxies:
@@ -296,7 +296,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "💾 OneDrive"
     type: select
     proxies:
@@ -306,7 +306,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "💳 PayPal"
     type: select
     proxies:
@@ -316,7 +316,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🎮 SONY PS"
     type: select
     proxies:
@@ -325,7 +325,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🎮 游戏平台"
     type: select
     proxies:
@@ -335,7 +335,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🎮 Steam"
     type: select
     proxies:
@@ -344,7 +344,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "⏬ PT站点"
     type: select
     proxies:
@@ -353,7 +353,7 @@ proxy-groups:
       - "🇯🇵 日本节点"
       - "🇨🇳 全球直连"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🚀 测速工具"
     type: select
     proxies:
@@ -363,7 +363,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "🌍 国外域名"
     type: select
     proxies:
@@ -373,7 +373,7 @@ proxy-groups:
       - "🇺🇸 美国节点"
       - "🇯🇵 日本节点"
       - "🇼🇸 台湾节点"
-      - "🇬🇧 英国节点"
+      - "🇩🇪 德国节点"
   - name: "Ⓜ️ 禁用网格"
     type: select
     proxies:
@@ -576,12 +576,6 @@ rule-providers:
     type: http
     url: "https://cdn.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_IP.mrs"
     format: mrs
-  SONY_PS4:
-    behavior: classical
-    interval: 28800
-    type: http
-    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PlayStation/PlayStation.yaml"
-    format: yaml
   Gemini:
     behavior: classical
     interval: 28800
@@ -607,9 +601,9 @@ rules:
   - "RULE-SET,Custom_Proxy_Domain,🌐 节点选择"
   - "RULE-SET,Custom_Proxy_IP,🌐 节点选择,no-resolve"
   - "GEOSITE,google-cn,🇨🇳 全球直连"
-  - "RULE-SET,SONY_PS4,🎮 SONY PS"
+  - "GEOSITE,playstation,🎮 SONY PS"
   - "RULE-SET,Gemini,🤖 Gemini"
-  - "GEOSITE,openai,🤖 ChatGPT"
+  - "GEOSITE,openai,🤖 Openai"
   - "GEOSITE,category-games@cn,🇨🇳 全球直连"
   - "RULE-SET,Steam_CDN_Domain,🇨🇳 全球直连"
   - "RULE-SET,Steam_CDN_IP,🇨🇳 全球直连,no-resolve"
@@ -621,7 +615,7 @@ rules:
   - "GEOSITE,onedrive,💾 OneDrive"
   - "GEOSITE,bing,🤖 Copilot"
   - "RULE-SET,My_Reject,Ⓜ️ 禁用网格"
-  - "GEOSITE,category-ai-!cn,🤖 AI服务"
+  - "GEOSITE,category-ai-!cn,🤖 国外AI"
   - "GEOSITE,github,🚀 GitHub"
   - "GEOSITE,category-speedtest,🚀 测速工具"
   - "GEOSITE,steam,🎮 Steam"
